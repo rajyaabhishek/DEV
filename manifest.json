@@ -1,0 +1,24 @@
+{
+    "manifest_version":3,
+    "name":"meom",
+    "description":"content_analyzer",
+    "version":"0.1.0",
+    "host_permissions":["https://*.youtube.com/*"],  
+
+        "background": {
+        "service_worker": "background.js"
+        },
+
+    "content_scripts":[{
+    "js":["script.js"],
+    "run_at":"document_idle",
+    "matches":["<all_urls>"]
+        }],
+    
+    "permissions":[
+        "storage",
+        "tabs",
+        "activeTab"
+    ]     
+
+}
